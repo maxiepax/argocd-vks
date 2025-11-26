@@ -35,4 +35,4 @@ spec:
       machineDeployments:
         - class: node-pool
           name: kubernetes-cluster-mgqx-np-pgy5
-          replicas: 1
+          replicas: 2
