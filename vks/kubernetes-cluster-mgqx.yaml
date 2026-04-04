@@ -1,7 +1,7 @@
 apiVersion: cluster.x-k8s.io/v1beta2
 kind: Cluster
 metadata:
-  name: kubernetes-cluster-cdsy
+  name: argocd-vks-cluster
   namespace: kim-prod-vlryx
 spec:
   clusterNetwork:
@@ -16,7 +16,8 @@ spec:
     classRef:
       name: builtin-generic-v3.6.0
       namespace: vmware-system-vks-public
-    version: v1.35.0---vmware.2-vkr.4
+    #version: v1.35.0---vmware.2-vkr.4
+    version: v1.31.14---vmware.1-fips-vkr.2
     variables:
       - name: vmClass
         value: best-effort-medium
@@ -30,7 +31,7 @@ spec:
     workers:
       machineDeployments:
         - class: node-pool
-          name: kubernetes-cluster-cdsy-np-u324
+          name: argocd-vks-cluster-np-u324
           replicas: 1
           metadata:
             annotations:
