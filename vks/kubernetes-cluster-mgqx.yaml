@@ -15,7 +15,7 @@ spec:
     class: builtin-generic-v3.4.0
     classNamespace: vmware-system-vks-public
     #version: v1.33.3---vmware.1-fips-vkr.1
-    version: v1.33.6---vmware.1-fips-vkr.2
+    version: v1.31.14---vmware.1-fips-vkr.2
     variables:
       - name: kubernetes
         value:
