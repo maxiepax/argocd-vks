@@ -1,7 +1,8 @@
-apiVersion: cluster.x-k8s.io/v1beta1
+apiVersion: cluster.x-k8s.io/v1beta2
 kind: Cluster
 metadata:
-  name: argocd-kubernetes-cluster-mgqx
+  name: kubernetes-cluster-cdsy
+  namespace: kim-prod-vlryx
 spec:
   clusterNetwork:
     pods:
@@ -12,18 +13,13 @@ spec:
         - 10.96.0.0/12
     serviceDomain: cluster.local
   topology:
-    class: builtin-generic-v3.4.0
-    classNamespace: vmware-system-vks-public
-    #version: v1.33.3---vmware.1-fips-vkr.1
-    version: v1.31.14---vmware.1-fips-vkr.2
+    classRef:
+      name: builtin-generic-v3.6.0
+      namespace: vmware-system-vks-public
+    version: v1.35.0---vmware.2-vkr.4
     variables:
-      - name: kubernetes
-        value:
-          certificateRotation:
-            enabled: true
-            renewalDaysBeforeExpiry: 90
       - name: vmClass
-        value: best-effort-xsmall
+        value: best-effort-medium
       - name: storageClass
         value: vsan-default-storage-policy
     controlPlane:
@@ -34,5 +30,8 @@ spec:
     workers:
       machineDeployments:
         - class: node-pool
-          name: argocd-kubernetes-cluster-mgqx
-          replicas: 2
+          name: kubernetes-cluster-cdsy-np-u324
+          replicas: 1
+          metadata:
+            annotations:
+              run.tanzu.vmware.com/resolve-os-image: os-name=photon, content-library=cl-d48e225857498db03
