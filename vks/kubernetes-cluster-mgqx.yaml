@@ -17,7 +17,7 @@ spec:
       name: builtin-generic-v3.6.0
       namespace: vmware-system-vks-public
     #version: v1.35.0---vmware.2-vkr.4
-    version: v1.31.14---vmware.1-fips-vkr.2
+    version: v1.33.6---vmware.1-fips-vkr.2
     variables:
       - name: vmClass
         value: best-effort-medium
