@@ -30,9 +30,9 @@ spec:
       replicas: 1
       metadata:
         annotations:
-          run.tanzu.vmware.com/resolve-os-image: os-name=photon, content-library=cl-23c0447de00e67e0a
+          run.tanzu.vmware.com/resolve-os-image: os-name=photon, content-library=cl-d48e225857498db03
     workers:
       machineDeployments:
         - class: node-pool
-          name: kubernetes-cluster-mgqx-np-pgy5
+          name: argocd-kubernetes-cluster-mgqx
           replicas: 2
