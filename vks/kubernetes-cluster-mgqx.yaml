@@ -32,7 +32,7 @@ spec:
       machineDeployments:
         - class: node-pool
           name: argocd-vks-cluster-np-u324
-          replicas: 1
+          replicas: 2
           metadata:
             annotations:
               run.tanzu.vmware.com/resolve-os-image: os-name=photon, content-library=cl-d48e225857498db03
