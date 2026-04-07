@@ -24,7 +24,7 @@ spec:
       - name: storageClass
         value: vsan-default-storage-policy
     controlPlane:
-      replicas: 1
+      replicas: 3
       metadata:
         annotations:
           run.tanzu.vmware.com/resolve-os-image: os-name=photon, content-library=cl-d48e225857498db03
